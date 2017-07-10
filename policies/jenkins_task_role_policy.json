@@ -41,6 +41,7 @@
     },
     {
       "Action": [
+        "s3:ListBucket",
         "s3:GetObject",
         "s3:GetObjectAcl",
         "s3:DeleteObject",
@@ -49,7 +50,8 @@
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::${jenkins_backup_path}/*"
+        "arn:aws:s3:::${jenkins_backup_path}/*",
+        "arn:aws:s3:::stacker-*"
       ]
     },
     {
@@ -58,7 +60,8 @@
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::${jenkins_backup_bucket}"
+        "arn:aws:s3:::${jenkins_backup_bucket}",
+        "arn:aws:s3:::stacker-*"
       ]
     },
     {
