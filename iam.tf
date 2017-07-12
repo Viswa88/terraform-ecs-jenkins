@@ -36,9 +36,9 @@ resource "aws_iam_policy_attachment" "s3-policy-attach" {
  * IAM profile to be used in auto-scaling launch configuration.
  */
 resource "aws_iam_instance_profile" "ecs" {
-  name  = "${var.stack_prefix}-ecs-instance-profile"
-  path  = "/"
-  roles = ["${aws_iam_role.ecs_role.name}"]
+  name = "${var.stack_prefix}-ecs-instance-profile"
+  path = "/"
+  role = "${aws_iam_role.ecs_role.name}"
 }
 
 /**

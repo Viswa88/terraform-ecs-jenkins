@@ -34,6 +34,10 @@ variable "ssh_key_name" {
   description = "Existing ec2 SSH key to launch instances with."
 }
 
+variable "ssl_certificate_id" {
+  description = "Existing SSL cert from acm"
+}
+
 /* 2016.09.f per http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html */
 /* ECS optimized AMIs per region */
 variable "amis" {

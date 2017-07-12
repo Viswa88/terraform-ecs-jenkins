@@ -45,7 +45,7 @@ resource "aws_iam_role_policy" "jenkins_policy" {
 
 /* ELB for web service */
 resource "aws_elb" "jenkins" {
-  name               = "${var.stack_prefix}-jenkins-terraform-elb"
+  name               = "${var.stack_prefix}-jenkins-elb"
   availability_zones = ["${var.availability_zones}"]
 
   listener {
