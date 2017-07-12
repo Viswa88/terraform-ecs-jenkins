@@ -3,6 +3,10 @@
   "Statement": [
     {
       "Action" : [
+        "autoscaling:*",
+        "iam:GetInstanceProfile",
+        "iam:PassRole",
+        "elasticloadbalancing:DescribeInstanceHealth",
         "ec2:AttachVolume",
         "ec2:AuthorizeSecurityGroupIngress",
         "ec2:CopyImage",
@@ -20,12 +24,14 @@
         "ec2:DescribeImageAttribute",
         "ec2:DescribeImages",
         "ec2:DescribeInstances",
+        "ec2:DescribeKeyPairs",
         "ec2:DescribeRegions",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSnapshots",
         "ec2:DescribeSubnets",
         "ec2:DescribeTags",
         "ec2:DescribeVolumes",
+        "ec2:DescribeVpcs",
         "ec2:DetachVolume",
         "ec2:GetPasswordData",
         "ec2:ModifyImageAttribute",
@@ -87,7 +93,11 @@
       ],
       "Effect": "Allow",
       "Resource": "*"
+    },
+    {
+      "Action": "cloudformation:*",
+      "Effect": "Allow",
+      "Resource": "*"
     }
-
   ]
 }
