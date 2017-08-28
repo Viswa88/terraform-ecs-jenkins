@@ -38,21 +38,21 @@ variable "ssl_certificate_id" {
   description = "Existing SSL cert from acm"
 }
 
-/* 2016.09.f per http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html */
+/* 2017.03.f per http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html */
 /* ECS optimized AMIs per region */
 variable "amis" {
   default = {
-    us-east-1      = "ami-b2df2ca4"
-    us-east-2      = "ami-832b0ee6"
-    us-west-1      = "ami-dd104dbd"
-    us-west-2      = "ami-022b9262"
-    eu-west-1      = "ami-a7f2acc1"
-    eu-west-2      = "ami-3fb6bc5b"
-    eu-central-1   = "ami-ec2be583"
-    ap-northeast-1 = "ami-c393d6a4"
-    ap-southeast-1 = "ami-a88530cb"
-    ap-southeast-2 = "ami-8af8ffe9"
-    ca-central-1   = "ami-ead5688e"
+    us-east-1      = "ami-9eb4b1e5"
+    us-east-2      = "ami-1c002379"
+    us-west-1      = "ami-4a2c192a"
+    us-west-2      = "ami-1d668865"
+    eu-west-1      = "ami-8fcc32f6"
+    eu-west-2      = "ami-cb1101af"
+    eu-central-1   = "ami-0460cb6b"
+    ap-northeast-1 = "ami-b743bed1"
+    ap-southeast-1 = "ami-9d1f7efe"
+    ap-southeast-2 = "ami-c1a6bda2"
+    ca-central-1   = "ami-b677c9d2"
   }
 }
 
