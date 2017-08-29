@@ -97,6 +97,17 @@
       "Resource": "*"
     },
     {
+      "Action": [
+        "cloudfront:CreateDistribution",
+        "cloudfront:GetDistribution",
+        "cloudfront:GetDistributionConfig",
+        "cloudfront:ListDistributions",
+        "cloudfront:UpdateDistribution"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
       "Action": "cloudformation:*",
       "Effect": "Allow",
       "Resource": "*"
