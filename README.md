@@ -35,3 +35,5 @@ For a full list of overridable variables see ```variables.tf```
 
 You can preserve your Jenkins settings by copying your /var/jenkins_home to the s3 bucket path defined by the variable s3_jenkins_backup
 eg: aws s3 sync /var/jenkins_home/ $s3_jenkins_backup
+
+You'll want to remove any venv's that got backed up, as symlinks won't survive the trip to s3
