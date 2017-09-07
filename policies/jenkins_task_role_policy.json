@@ -7,6 +7,7 @@
         "iam:GetInstanceProfile",
         "iam:PassRole",
         "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
         "elasticloadbalancing:DescribeInstanceHealth",
         "elasticloadbalancing:DescribeLoadBalancers",
         "ec2:AttachVolume",
@@ -49,6 +50,7 @@
     },
     {
       "Action": [
+        "s3:CreateBucket",
         "s3:ListBucket",
         "s3:GetObject",
         "s3:GetObjectAcl",
@@ -57,25 +59,21 @@
         "s3:PutObjectAcl"
       ],
       "Effect": "Allow",
-      "Resource": [
-        "arn:aws:s3:::${jenkins_backup_path}/*",
-        "arn:aws:s3:::stacker-*"
-      ]
-    },
-    {
-      "Action": [
-        "s3:ListBucket"
-      ],
-      "Effect": "Allow",
-      "Resource": [
-        "arn:aws:s3:::${jenkins_backup_bucket}",
-        "arn:aws:s3:::stacker-*"
-      ]
+      "Resource": "*"
     },
     {
       "Action": [
         "cloudformation:*",
-        "apigateway:*"
+        "apigateway:*",
+        "events:ListRuleNamesByTarget",
+        "events:ListTargetsByRule",
+        "events:PutRule",
+        "events:DeleteRule",
+        "events:DescribeRule",
+        "events:EnableRule",
+        "events:DisableRule",
+        "events:PutTargets",
+        "events:RemoveTargets"
       ],
       "Effect": "Allow",
       "Resource": "*"
@@ -83,7 +81,7 @@
     {
       "Action": "lambda:*",
       "Effect": "Allow",
-      "Resource": "arn:aws:lambda:*"
+      "Resource": "*"
     },
     {
       "Action": [
@@ -98,17 +96,28 @@
     },
     {
       "Action": [
+        "iam:GetServerCertificate",
+        "iam:UploadServerCertificate",
+        "iam:DeleteServerCertificate",
+        "iam:PassRole",
+        "iam:PutRolePolicy",
+        "iam:AttachRolePolicy",
+        "iam:GetRole",
+        "iam:CreateRole",
+        "iam:DeleteRole"
+
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
         "cloudfront:CreateDistribution",
         "cloudfront:GetDistribution",
         "cloudfront:GetDistributionConfig",
         "cloudfront:ListDistributions",
         "cloudfront:UpdateDistribution"
       ],
-      "Effect": "Allow",
-      "Resource": "*"
-    },
-    {
-      "Action": "cloudformation:*",
       "Effect": "Allow",
       "Resource": "*"
     }
